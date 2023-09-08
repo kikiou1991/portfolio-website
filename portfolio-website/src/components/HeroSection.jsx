@@ -11,14 +11,14 @@ const HeroSection = () => {
         <div className='grid grid-cols-1 sm:grid-cols-12 mt-10'>
             <div className='col-span-7 place-self-center text-center sm:text-left' > 
                 <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold">
-                    Hello there, I am
+                    {'Hello there, I am '}
                 <TypeAnimation
                     sequence={[
                         
                         // Same substring at the start will only be typed out once, initially
-                        ' Gabor',
+                        'Gabor',
                         2000, // wait 1s before replacing "Mice" with "Hamsters"
-                        'a web-dev',
+                        ' a web-dev',
                         2000,
                         
                     ]}
@@ -45,6 +45,7 @@ const HeroSection = () => {
                     className='absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'
                     width={300}
                     height={300}
+                    
                     />
                 </div>
             </div>

@@ -55,7 +55,7 @@ const handleTabChange = (id) => {
     <section className='text-white'>
   <div className='md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16 h-full'>
     <div className='relative w-full md:w-auto'>
-      <Image src="/images/study.png" layout="responsive" width={200} height={200} />
+      <Image src="/images/study.png" layout="responsive" width={200} height={200} alt='study-office'/>
     </div>
     <div className='mt-4 md:mt-0 text-left flex flex-col h-full'>
       <h2 className='text-4xl font-bold text-[#EEBA35] mb-4'>About Me</h2>
