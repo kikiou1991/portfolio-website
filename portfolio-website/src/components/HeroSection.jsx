@@ -38,7 +38,7 @@ const HeroSection = () => {
                 </div>
             </div>
             <div className='col-span-5 mt-4 lg:mt-0'>
-                <div className='rounded-full bg-[#FFD25F] w- [250px] h-[250px]lg:w-[450px] h-[450px] relative place-self-center '>
+                <div className='rounded-[100%] bg-[#FFD25F] w-[250px] h-[250px] lg:w-[450px] lg:h-[450px] relative place-self-center '>
                 <Image 
                     src="/images/wizard.png"
                     alt="Gabor the Wizard"

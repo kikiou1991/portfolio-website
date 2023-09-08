@@ -1,6 +1,10 @@
+"use client"
 import React from 'react'
 import ProjectsCard from './ProjectsCard'
+import { useState } from 'react'
+import ProjectTag from './ProjectTag'
 
+// Data array for the different projects
 const projectsData = [
     {
         id: 1,
@@ -21,34 +25,60 @@ const projectsData = [
     
     {
         id: 3,
-        title: "Harry Potter Communnity Page",
-        description: "Harry Potter Comunity forum",
+        title: "Harry Potter Community Page",
+        description: "Harry Potter Community forum",
         image: "/images/forum.png",
         tag: ["All", "Web"],
         gitUrl: "https://github.com/kikiou1991/hp_forum-project"
     },
-    
+    {
+        id: 4,
+        title: "Food App",
+        description: "Recipe Fridge App",
+        image: "/images/food.png",
+        tag: ["All", "Mobile"],
+        gitUrl: "/"
+    },
 ]
 
 const ProjectSection = () => {
+    const [tag, setTag] = useState("All")
 
+    // Function to handle changing the selected project tag
+    const handleTagChange = (newTag) => {
+        setTag(newTag)
+    }
 
-  return (
-    <>  
-        <h2>
-        <div>{projectsData.map((project) => (
-            <ProjectsCard 
+    // Filter the projects based on the selected tag
+    const filteredProjects = projectsData.filter((project) => 
+        project.tag.includes(tag)
+    );
+
+    return (
+        <section id="projects">  
+            <h2 className='text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12'>
+                My Projects
+            </h2>
+            <div className='text-white flex flex-row justify-center text-center gap-2 mb-2 py-6'>
+                {/* Project filter buttons */}
+                <ProjectTag onClick={handleTagChange} name="All" isSelected={tag === "All"} />
+                <ProjectTag onClick={handleTagChange} name="Web" isSelected={tag === "Web"} />
+                <ProjectTag onClick={handleTagChange} name="Mobile" isSelected={tag === "Mobile"} />
+            </div>
+            <div className='flex flex-row flex-wrap gap-8 justify-between'>
+                {filteredProjects.map((project, index) => (
+                    // Render project cards
+                    <ProjectsCard 
                         key={project.id} 
                         title={project.title} 
                         description={project.description} 
-                        imgUrl={project.image}
-                        tags={project.tag}
+                        imgUrl={project.image}                        
                         gitUrl={project.gitUrl}
-                        />
-        ))}</div>
-        </h2>
-    </>
-  )
+                    />
+                ))}
+            </div>
+        </section>
+    )
 }
 
 export default ProjectSection
