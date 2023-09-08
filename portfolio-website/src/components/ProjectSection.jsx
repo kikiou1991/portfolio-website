@@ -7,14 +7,16 @@ const projectsData = [
         title: "Memory Game",
         description: "Harry Potter themed memory game",
         image: "/images/memory.png",
-        tag: ["All", "Web"]
+        tag: ["All", "Web"],
+        gitUrl: "https://github.com/kikiou1991/HP_memoryGame"
     },
     {
         id: 2,
         title: "Study Timer",
         description: "Chrome Extension to track study and rest times",
         image: "/images/timer.png",
-        tag: ["All", "Web"]
+        tag: ["All", "Web"],
+        gitUrl: "https://github.com/kikiou1991/chrome_study_extension"
     },
     
     {
@@ -22,7 +24,8 @@ const projectsData = [
         title: "Harry Potter Communnity Page",
         description: "Harry Potter Comunity forum",
         image: "/images/forum.png",
-        tag: ["All", "Web"]
+        tag: ["All", "Web"],
+        gitUrl: "https://github.com/kikiou1991/hp_forum-project"
     },
     
 ]
@@ -39,7 +42,9 @@ const ProjectSection = () => {
                         title={project.title} 
                         description={project.description} 
                         imgUrl={project.image}
-                        tags={project.tag}/>
+                        tags={project.tag}
+                        gitUrl={project.gitUrl}
+                        />
         ))}</div>
         </h2>
     </>
