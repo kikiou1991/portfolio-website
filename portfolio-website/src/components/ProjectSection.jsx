@@ -3,6 +3,8 @@ import React from 'react'
 import ProjectsCard from './ProjectsCard'
 import { useState } from 'react'
 import ProjectTag from './ProjectTag'
+import {Card, CardBody, CardFooter, Image} from "@nextui-org/react";
+
 
 // Data array for the different projects
 const projectsData = [
@@ -65,7 +67,7 @@ const ProjectSection = () => {
                 <ProjectTag onClick={handleTagChange} name="Web" isSelected={tag === "Web"} />
                 <ProjectTag onClick={handleTagChange} name="Mobile" isSelected={tag === "Mobile"} />
             </div>
-            <div className='flex flex-row flex-wrap gap-8 justify-between'>
+            <div className='gap-2 grid grid-cols-1 sm:grid-cols-3 z-0'>
                 {filteredProjects.map((project, index) => (
                     // Render project cards
                     <ProjectsCard 
@@ -77,6 +79,19 @@ const ProjectSection = () => {
                     />
                 ))}
             </div>
+            {/* <div className="gap-2 grid grid-cols-2 sm:grid-cols-4">
+                {filteredProjects.map((project, index) => (
+                <TrialCard
+                        key={project.id} 
+                        title={project.title} 
+                        description={project.description} 
+                        imgUrl={project.image}                        
+                        gitUrl={project.gitUrl}
+                
+                />))}
+            </div> */}
+           
+  
         </section>
     )
 }
