@@ -7,8 +7,8 @@ import Image from 'next/image';
 
 const ProjectsCard = ({imgUrl, title, description, gitUrl}) => {
   return (
-    <div className='w-full md:w-[30%] h-[400px]  '>
-        <div className="h-[70%] rounded-t-xl overflow-hidden relative group">
+    <div className='w-full  md:w-[30%] h-[300px]  '>
+        <div className="h-[60%]  rounded-t-xl overflow-hidden relative group">
             <Image src={imgUrl} fill style={{objectFit:'cover', width:'100%', height:'100%'}}/>
             
 
@@ -23,7 +23,7 @@ const ProjectsCard = ({imgUrl, title, description, gitUrl}) => {
         
         </div>
 
-        <div className='text-white rounded-b-xl bg-[#181818] h-[30%] pt-2 pb-4 px-2'> 
+        <div className='text-white rounded-b-xl bg-[#181818] h-[40%]  pt-2 pb-4 px-2'> 
             <h5 className='font-xl font-semibold mb-2'>{title}</h5>
             <p className='text-[#FFD25F]'>{description}</p>
         </div>
