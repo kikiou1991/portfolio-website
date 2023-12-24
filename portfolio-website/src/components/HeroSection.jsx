@@ -17,7 +17,7 @@ const HeroSection = () => {
                         
                         // Same substring at the start will only be typed out once, initially
                         'Gabor',
-                        2000, // wait 1s before replacing "Mice" with "Hamsters"
+                        2000, 
                         ' a web-dev',
                         2000,
                         
@@ -29,7 +29,7 @@ const HeroSection = () => {
                     />
 
                 </h1>
-                <p className='text-[#EEBA35] text-base sm:text-lg mb-6 lg:text-xl'>
+                <p className='text-[#EEBA35] text-base font-semibold sm:text-lg mb-6 lg:text-xl'>
                     I am also a huge Harry Potter fan. That gave me the idea for the theme of this page, and also some of my favourite projects are centered around this as well. Thus mixing two of my passions.
                 </p>
                 <div>

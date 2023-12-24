@@ -23,14 +23,7 @@ const projectsData = [
         gitUrl: "https://github.com/kikiou1991/chrome_study_extension"
     },
     
-    {
-        id: 3,
-        title: "Harry Potter Community Page",
-        description: "Harry Potter Community forum",
-        image: "/images/forum.png",
-        tag: ["All", "Web"],
-        gitUrl: "https://github.com/kikiou1991/hp_forum-project"
-    },
+    
     {
         id: 4,
         title: "Food App",
@@ -65,7 +58,7 @@ const ProjectSection = () => {
                 <ProjectTag onClick={handleTagChange} name="Web" isSelected={tag === "Web"} />
                 <ProjectTag onClick={handleTagChange} name="Mobile" isSelected={tag === "Mobile"} />
             </div>
-            <div className='flex flex-row flex-wrap gap-8 justify-between'>
+            <div className='flex flex-row flex-wrap gap-6 justify-between'>
                 {filteredProjects.map((project, index) => (
                     // Render project cards
                     <ProjectsCard 

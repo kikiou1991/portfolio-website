@@ -32,11 +32,12 @@ const Navbar = () => {
             alt='Gabor the Wizard'
             width={50}
             height={50}
+            
           />
         </div>
         <div className='ml-auto'>
-          <div className='menu hidden md:flex items-center'>
-            <ul className='flex space-x-4 md:p-0 md:flex-row md:space-x-10 mt-0'>
+          <div className='menu hidden md:flex items-center '>
+            <ul className='flex space-x-4 md:p-0 md:flex-row md:space-x-10 mt-0 '>
               {navLinks.map((link, index) => (
                 <li key={index}>
                   <NavLink href={link.path} title={link.title} />

@@ -10,9 +10,6 @@ const TAB_DATA = [
         content: (
             <ul className='list-disc md:list-disc ml-5'>
                 <li>JavaScript</li>
-                <li>Node.js</li>
-                <li>PHP/Laravel</li>
-                <li>PostgreSQL/MySQL</li>
                 <li>React/Next.js</li>
                 <li>Tailwind.css</li>
             </ul>
@@ -23,10 +20,10 @@ const TAB_DATA = [
         id: "education",
         content: (
             <ul className='list-disc md:list-disc ml-5'>
-                <li>Io Academy - Skills Bootcamp in Software Development</li>
-                <li>CodeCademy - Full-Stack Engineer</li>
+                <li>Io Academy - Skills Bootcamp in Software Development(ongoing)</li>
+                <li>CodeCademy - Front-End Engineer</li>
                 <li>freeCodeCamp - JavaScript-Algorithms and Data Structures</li>
-                <li>freeCodeCamp - Back End Development and APIs</li>
+                
             </ul>
         )
     },
