@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import NavLink from './Navlink';
-import { Bars3Icon, XmarkIcon } from '@heroicons/react/24/solid';
+import { Bars3Icon } from '@heroicons/react/24/solid';
 import MenuOverLay from './MenuOverLay';
 
 const navLinks = [
@@ -69,7 +69,7 @@ const Navbar = () => {
                                         hover:text-white
                                         hover:border-white'
             >
-              <XmarkIcon className='h-5 w-5' />
+              <Bars3Icon className='h-5 w-5' />
             </button>
           )}
         </div>
