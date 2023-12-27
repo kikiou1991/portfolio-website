@@ -62,6 +62,7 @@ const ProjectSection = () => {
                 {filteredProjects.map((project, index) => (
                     // Render project cards
                     <ProjectsCard 
+                        
                         key={project.id} 
                         title={project.title} 
                         description={project.description} 
