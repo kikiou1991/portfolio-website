@@ -26,11 +26,11 @@ const projectsData = [
     
     {
         id: 4,
-        title: "Food App",
+        title: "Wizard Boards",
         description: "Recipe Fridge App",
         image: "/images/food.png",
         tag: ["All", "Mobile"],
-        gitUrl: "/"
+        gitUrl: "https://gadorjani.co.uk/wizardboards/Login/sign-in"
     },
 ]
 
