@@ -1,5 +1,5 @@
 {
     "rewrites": [
-      {"source": "/wizardboards/", "destination": "https://wizard-boards.vercel.app"}
+      {"source": "/wizardboards", "destination": "https://wizard-boards.vercel.app"}
     ]
   }
