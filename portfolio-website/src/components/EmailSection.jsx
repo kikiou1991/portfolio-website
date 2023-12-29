@@ -41,7 +41,7 @@ const EmailSection = () => {
       }
     };
   return (
-    <section className='flex md:flex-row flex-col my-12 md:my-12 py-12 gap-2'>
+    <section className='flex md:flex-row items-center justify-center flex-col my-12 md:my-12 py-12 gap-2'>
         <div>
             <h5 className='text-xl font-bold text-white my-2'>Let`s connect</h5>
             <p className='text-base text-white font-semibold md:text-lg mb-4 max-w-md'>
