@@ -27,10 +27,10 @@ const projectsData = [
     {
         id: 4,
         title: "Wizard Boards",
-        description: "Recipe Fridge App",
+        description: "Trello clone with a Harry Potter theme",
         image: "/images/food.png",
-        tag: ["All", "Mobile"],
-        gitUrl: "https://gadorjani.co.uk/wizardboards/Login/sign-in"
+        tag: ["All", "Web"],
+        gitUrl: "https://gadorjani.co.uk/wizardboards/auth/sign-in"
     },
 ]
 
@@ -58,7 +58,7 @@ const ProjectSection = () => {
                 <ProjectTag onClick={handleTagChange} name="Web" isSelected={tag === "Web"} />
                 <ProjectTag onClick={handleTagChange} name="Mobile" isSelected={tag === "Mobile"} />
             </div>
-            <div className='flex flex-row flex-wrap gap-6 justify-between'>
+            <div className='flex flex-row flex-wrap gap-6 items-center'>
                 {filteredProjects.map((project, index) => (
                     // Render project cards
                     <ProjectsCard 

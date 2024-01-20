@@ -9,8 +9,8 @@ const HeroSection = () => {
   return (
     <section>
         <div className='grid grid-cols-1 sm:grid-cols-12 mt-10'>
-            <div className='col-span-7 place-self-center text-center sm:text-left' > 
-                <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold">
+            <div className='col-span-7 place-self-center text-center sm:text-left'  > 
+                <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold" style={{minHeight: '100px'}}>
                     {'Hello there, I am '}
                 <TypeAnimation
                     sequence={[
@@ -37,8 +37,8 @@ const HeroSection = () => {
                     <button className='px-6 py-3 w-full sm:w-fit rounded-full mr-4  bg-trasnparent hover:bg-slate-200 text-white border hover:text-black mt-3'>Download CV</button>
                 </div>
             </div>
-            <div className='col-span-5 mt-4 lg:mt-0'>
-                <div className='rounded-[100%] bg-[#FFD25F] w-[250px] h-[250px] lg:w-[450px] lg:h-[450px] relative place-self-center '>
+            <div className='col-span-5 mt-4 py-2 lg:mt-0 place-self-center text-center sm:text-left'>
+                <div className='rounded-[100%] bg-[#FFD25F] w-[250px] h-[250px] lg:w-[450px] lg:h-[450px] relative items-center'>
                 <Image 
                     src="/images/wizard.png"
                     alt="Gabor the Wizard"

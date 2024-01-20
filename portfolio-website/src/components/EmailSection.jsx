@@ -41,7 +41,7 @@ const EmailSection = () => {
       }
     };
   return (
-    <section className='flex md:flex-row items-center justify-center flex-col my-12 md:my-12 py-12 gap-2 w-full'>
+    <section className='flex md:flex-row items-center justify-center flex-col my-12 md:my-12 py-12 gap-2 w-full' id='contact'>
         <div>
             <h5 className='text-xl font-bold text-white my-2'>Let`s connect</h5>
             <p className='text-base text-white font-semibold md:text-lg mb-4 max-w-md'>
@@ -51,12 +51,12 @@ const EmailSection = () => {
             <Link href="https://github.com/kikiou1991" target='_blank' className='transfrom transition-transform hover:scale-125'>
                 <GitHub/>
             </Link>
-            <Link href="https://www.linkedin.com/in/gabor-adorjani-599666290/" className='transfrom transition-transform hover:scale-125'>
+            <Link href="https://www.linkedin.com/in/gabor-adorjani-599666290/" target='_blank' className='transfrom transition-transform hover:scale-125'>
                 <LinkedIn/>
             </Link>
         </div>
         </div>
-        <div className='md:w-full w-2/3'>
+        <div className='md:w-full w-2/3' style={{minWidth: '350px'}}>
         {emailSubmitted ? (
           <p className="text-green-500 text-sm mt-2">
             Email sent successfully!
@@ -80,7 +80,7 @@ const EmailSection = () => {
                     </label>
                     <textarea name='message' id='message' placeholder='Let`s talk about...' className='bg-[#1819E] border bordr-[#33353F] rounded-lg block w-full p-2.5' w-full></textarea>
                 </div>
-                <button type='submit'className='bg-white text-black font-medium py-2.5 px-5 rounded-lg w-full'>Send Message</button>
+                <button onClick={handleSubmit} type='submit'className='bg-white text-black font-medium py-2.5 px-5 rounded-lg w-full'>Send Message</button>
             </form>   
         )} 
         </div>    

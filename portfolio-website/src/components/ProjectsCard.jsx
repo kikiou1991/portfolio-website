@@ -10,8 +10,8 @@ const ProjectsCard = ({imgUrl, title, description, gitUrl}) => {
     //     return text.length > maxLength ? '${text.slice(0, maxLength}...' : text;
     // }
   return (
-    <div className='w-full  md:w-[30%] h-[300px]  '>
-        <div className="h-[60%]  rounded-t-xl overflow-hidden relative group ">
+    <div className='w-full  md:w-[30%] h-[300px]'  style={{minWidth: '200px'}}>
+        <div className="h-[60%]  rounded-t-xl overflow-hidden relative group">
             <Image src={imgUrl} fill style={{objectFit:'cover', width:'100%', height:'100%'}}/>
             
 
