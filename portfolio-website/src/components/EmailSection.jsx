@@ -66,12 +66,12 @@ const EmailSection = () => {
             <form className='flex flex-col gap-2 w-full' onSubmit={handleSubmit}>
                 <div className='mb-2'> 
                     <label htmlFor='email' typeof='email' className='text-white block  text-sm font-medium mb-2'>Your email</label>
-                    <input name='email' type='email' id='email' require placeholder='example@gmail.com' className='bg-[#1819E] border bordr-[#33353F] rounded-lg block w-full p-2.5'/>
+                    <input name='email' type='email' id='email' required placeholder='example@gmail.com' className='bg-[#1819E] border bordr-[#33353F] rounded-lg block w-full p-2.5'/>
 
                 </div>
                 <div className='mb-2'>
                     <label htmlFor='subject' typeof='email' className='text-white block text-sm font-medium mb-2'>Subject</label>
-                    <input name='subject' type='text' id='subject' require  className='bg-[#1819E] border bordr-[#33353F] rounded-lg block w-full p-2.5'/>
+                    <input name='subject' type='text' id='subject' required className='bg-[#1819E] border bordr-[#33353F] rounded-lg block w-full p-2.5'/>
 
                 </div>
                 <div className='mb-6'>
