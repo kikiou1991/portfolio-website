@@ -5,14 +5,14 @@ import Image from 'next/image';
 
 
 
-const ProjectsCard = ({imgUrl, title, description, gitUrl}) => {
+const ProjectsCard = ({imgUrl, title, description, gitUrl, imgAlt}) => {
     // const truncateText = (text, maxLength) => {
     //     return text.length > maxLength ? '${text.slice(0, maxLength}...' : text;
     // }
   return (
     <div className='w-full  md:w-[30%] h-[300px]'  style={{minWidth: '200px'}}>
         <div className="h-[60%]  rounded-t-xl overflow-hidden relative group">
-            <Image src={imgUrl} fill style={{objectFit:'cover', width:'100%', height:'100%'}}/>
+            <Image src={imgUrl} fill style={{objectFit:'cover', width:'100%', height:'100%'}} alt={imgAlt}/>
             
 
             <div className='overlay rounded-t-xl gap-2 items-center justify-center absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500'>

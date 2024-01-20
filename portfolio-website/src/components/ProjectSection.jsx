@@ -12,7 +12,8 @@ const projectsData = [
         description: "Harry Potter themed memory game",
         image: "/images/memory.png",
         tag: ["All", "Web"],
-        gitUrl: "https://github.com/kikiou1991/HP_memoryGame"
+        gitUrl: "https://github.com/kikiou1991/HP_memoryGame",
+        imgAlt: "Memory Game"
     },
     {
         id: 2,
@@ -20,7 +21,8 @@ const projectsData = [
         description: "Chrome Extension to track study and rest times",
         image: "/images/timer.png",
         tag: ["All", "Web"],
-        gitUrl: "https://github.com/kikiou1991/chrome_study_extension"
+        gitUrl: "https://github.com/kikiou1991/chrome_study_extension",
+        imgAlt: "Study Timer"
     },
     
     
@@ -30,7 +32,9 @@ const projectsData = [
         description: "Trello clone with a Harry Potter theme",
         image: "/images/food.png",
         tag: ["All", "Web"],
-        gitUrl: "https://gadorjani.co.uk/wizardboards/auth/sign-in"
+        gitUrl: "https://gadorjani.co.uk/wizardboards/auth/sign-in",
+        imgAlt: "Wizard Boards"
+
     },
 ]
 
@@ -68,6 +72,7 @@ const ProjectSection = () => {
                         description={project.description} 
                         imgUrl={project.image}                        
                         gitUrl={project.gitUrl}
+                        imgAlt={project.imgAlt}
                     />
                 ))}
             </div>
