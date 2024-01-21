@@ -8,9 +8,9 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col bg-[#372E29] container mx-auto px-12 py-4" >
+    <main className="flex min-w-full min-h-screen flex-col bg-[#372E29] container mx-auto px-4 py-4" >
       <Navbar />
-      <div class='container mt-20 mx-auto px-12 py-4'>
+      <div class='container mt-20 mx-auto items-center px-12 py-4'>
         <HeroSection />
         <AboutSection />
         <ProjectSection />

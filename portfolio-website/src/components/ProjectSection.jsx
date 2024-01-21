@@ -62,7 +62,7 @@ const ProjectSection = () => {
                 <ProjectTag onClick={handleTagChange} name="Web" isSelected={tag === "Web"} />
                 <ProjectTag onClick={handleTagChange} name="Mobile" isSelected={tag === "Mobile"} />
             </div>
-            <div className='flex flex-row flex-wrap gap-6 items-center'>
+            <div className='flex flex-row flex-wrap gap-6 items-center px-2'>
                 {filteredProjects.map((project, index) => (
                     // Render project cards
                     <ProjectsCard 

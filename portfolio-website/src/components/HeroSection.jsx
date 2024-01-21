@@ -1,5 +1,6 @@
 "use client"
 import React from 'react'
+import NavLink from './Navlink';
 
 import Image from 'next/image'
 import { TypeAnimation } from 'react-type-animation';
@@ -7,7 +8,7 @@ import { TypeAnimation } from 'react-type-animation';
 
 const HeroSection = () => {
   return (
-    <section>
+    <section className=''>
         <div className='grid grid-cols-1 sm:grid-cols-12 mt-10'>
             <div className='col-span-7 place-self-center text-center sm:text-left'  > 
                 <h1 className="text-white text-4xl sm:text-5xl lg:text-6xl font-extrabold" style={{minHeight: '120px'}}>
@@ -33,7 +34,12 @@ const HeroSection = () => {
                     I am also a huge Harry Potter fan. That gave me the idea for the theme of this page, and also some of my favourite projects are centered around this as well. Thus mixing two of my passions.
                 </p>
                 <div>
-                    <button className='px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-white hover:bg-slate-200 text-black'>Hire me</button>
+                    
+                    <button className='px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-white hover:bg-slate-200 text-black'>
+                        <a href='#contact'>Hire me</a>
+                    </button>
+
+                   
                     <button className='px-6 py-3 w-full sm:w-fit rounded-full mr-4  bg-trasnparent hover:bg-slate-200 text-white border hover:text-black mt-3'>Download CV</button>
                 </div>
             </div>
