@@ -81,36 +81,22 @@ const EmailSection = () => {
                 placeholder='example@gmail.com'
                 className='bg-[#1819E] border bordr-[#33353F] rounded-lg block w-full p-2.5'
                 value={formData.email}
-                onChange={''}
               />
             </div>
             <div className='mb-2'>
               <label htmlFor='subject' typeof='email' className='text-white block text-sm font-medium mb-2'>
                 Subject
               </label>
-              <input name='subject' type='text' id='subject' required className='bg-[#1819E] border bordr-[#33353F] rounded-lg block w-full p-2.5' value={formData.subject} onChange={''} />
+              <input name='subject' type='text' id='subject' required className='bg-[#1819E] border bordr-[#33353F] rounded-lg block w-full p-2.5' value={formData.subject} />
             </div>
             <div className='mb-6'>
               <label htmlFor='message' className='text-white block text-sm mb-2 font-medium'>
                 Message
               </label>
-              <textarea
-                name='message'
-                id='message'
-                placeholder='Let`s talk about...'
-                className='bg-[#1819E] border bordr-[#33353F] rounded-lg block w-full p-2.5'
-                value={formData.message}
-                onChange={''}></textarea>
+              <textarea name='message' id='message' placeholder='Let`s talk about...' className='bg-[#1819E] border bordr-[#33353F] rounded-lg block w-full p-2.5' value={formData.message}></textarea>
             </div>
             <button type='submit' className='bg-white text-black font-medium py-2.5 px-5 rounded-lg w-full'>
-              Submit{' '}
-              {/* <FaPaperPlane
-                className='text-xs
-                opacity-70 transition-all
-                group-hover:translate-x-1
-                group-hover:-translate-y-1'
-              /> */}
-              {''}
+              Submit
             </button>
           </form>
         )}
