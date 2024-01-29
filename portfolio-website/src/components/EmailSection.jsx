@@ -1,9 +1,11 @@
 'use client';
 import { GitHub } from '@/app/svg/github';
 import { LinkedIn } from '@/app/svg/linkedin';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { sendEmail } from '@/app/api/send/route';
+import { FaPaperPlane } from 'react-icons/fa';
 const EmailSection = () => {
   const [formData, setFormData] = useState({
     email: '',
@@ -42,9 +44,23 @@ const EmailSection = () => {
   };
 
   return (
-    <section className='flex md:flex-row items-center justify-center flex-col my-12 md:my-12 py-12 gap-2 w-full' id='contact'>
-      <div>
-        <h5 className='text-xl font-bold text-white my-2'>Let`s connect</h5>
+    <motion.section
+      initial={{
+        opacity: 0,
+      }}
+      whileInView={{
+        opacity: 1,
+      }}
+      transition={{
+        duration: 1,
+      }}
+      viewport={{
+        once: true,
+      }}
+      className='flex items-center text-center justify-center flex-col my-12 md:my-12 py-12 gap-2 md:w-full w-[min(100%,25rem)]'
+      id='contact'>
+      <div className='flex flex-col items-center justify-center'>
+        <h2 className='text-xl font-bold text-white my-2'>Let`s connect</h2>
         <p className='text-base text-white font-semibold md:text-lg mb-4 max-w-md'>
           {' '}
           I am currently open to freelance work! My inbox is always open for request, weather you have a question or you would like to say hi. I will try my best to get back to you in a timely manner.
@@ -58,16 +74,17 @@ const EmailSection = () => {
           </Link>
         </div>
       </div>
-      <div className='md:w-full w-[min(100%,38rem)]'>
+      <div className=' items-center justify-center'>
         {emailSubmitted ? (
           <p className='text-green-500 text-sm mt-2'>Email sent successfully!</p>
         ) : (
           <form
-            className='flex flex-col gap-2 w-full'
+            style={{ minWidth: '500px' }}
+            className='flex flex-col gap-2 mt-10 justify-center items-center'
             onSubmit={async (formData) => {
               await sendEmail(formData);
             }}>
-            <div className='mb-2'>
+            <div className='mb-2 w-full'>
               <label htmlFor='email' typeof='email' className='text-white block  text-sm font-medium mb-2'>
                 Your e-mail
               </label>
@@ -77,29 +94,46 @@ const EmailSection = () => {
                 id='email'
                 required
                 placeholder='example@gmail.com'
-                className='bg-[#1819E] border bordr-[#33353F] rounded-lg block w-full p-2.5'
+                className='bg-[#1819E] w-full border border-[#33353F] rounded-lg  p-3'
+                onChange={''}
                 value={formData.email}
               />
             </div>
-            <div className='mb-2'>
-              <label htmlFor='subject' typeof='email' className='text-white block text-sm font-medium mb-2'>
+            <div className='mb-2 w-full'>
+              <label htmlFor='subject' typeof='email' className='text-white w-full block text-sm font-medium mb-2'>
                 Subject
               </label>
-              <input name='subject' type='text' id='subject' required className='bg-[#1819E] border bordr-[#33353F] rounded-lg block w-full p-2.5' value={formData.subject} />
+              <input name='subject' type='text' id='subject' required className='bg-[#1819E] border border-[#33353F] w-full rounded-lg p-2.5' onChange={''} value={formData.subject} />
             </div>
-            <div className='mb-6'>
+            <div className='mb-6 w-full'>
               <label htmlFor='message' className='text-white block text-sm mb-2 font-medium'>
                 Message
               </label>
-              <textarea name='message' id='message' placeholder='Let`s talk about...' className='bg-[#1819E] border bordr-[#33353F] rounded-lg block w-full p-2.5' value={formData.message}></textarea>
+              <textarea
+                name='message'
+                id='message'
+                onChange={''}
+                placeholder='Let`s talk about...'
+                maxLength={500}
+                className='bg-[#1819E] border border-[#33353F] w-full rounded-lg h-52 p-2.5'
+                value={formData.message}></textarea>
             </div>
-            <button type='submit' className='bg-white text-black font-medium py-2.5 px-5 rounded-lg w-full'>
-              Submit
+
+            <button type='submit' className='bg-white group flex items-center justify-center gap-2 text-black font-medium py-2.5 px-5 rounded-lg transition-all' style={{ maxWidth: '120px' }}>
+              Submit{''}
+              <FaPaperPlane
+                className='text-xs
+                  opacity-70 transition-all
+                  group-hover:translate-x-1
+                  group-hover: -translate-y-1
+                  items-center justify-center'
+              />
+              {''}
             </button>
           </form>
         )}
       </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -2,6 +2,7 @@
 import React, { useState, useTransition } from 'react';
 import Image from 'next/image';
 import TabButton from './TabButton';
+import { motion } from 'framer-motion';
 
 const TAB_DATA = [
   {
@@ -50,18 +51,32 @@ const AboutSection = () => {
   };
 
   return (
-    <section className='text-white' id='about'>
+    <motion.section
+      initial={{
+        opacity: 0,
+      }}
+      whileInView={{
+        opacity: 1,
+      }}
+      transition={{
+        duration: 1,
+      }}
+      viewport={{
+        once: true,
+      }}
+      className='text-white my-5'
+      id='about'>
       <div className='md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16 h-full'>
         <div className='relative w-full md:w-auto'>
           <Image src='/images/study.png' layout='responsive' width={170} height={170} alt='study-office' />
         </div>
-        <div className='mt-4 md:mt-0 text-left flex flex-col h-full'>
+        <div className='mt-5 md:mt-0 text-left flex flex-col h-full'>
           <h2 className='text-4xl font-bold text-[#EEBA35] mb-4'>About Me</h2>
           <p className='text-base md:text-lg'>
             I'm a dynamic web developer with expertise in JavaScript, HTML5, CSS3, GIT, React, and TailwindCSS. Committed to continuous growth, I'm actively pursuing full-stack engineering studies and
             have completed projects like my Trello Clone. Eager to tackle new challenges and leave a lasting mark in web development. Ready to make things happen!
           </p>
-          <div className='flex flex-row justify-start mt-8'>
+          <div className='flex flex-row  justify-start mt-8'>
             <TabButton selectTab={() => handleTabChange('skills')} active={tab === 'skills'}>
               Skills
             </TabButton>
@@ -75,7 +90,7 @@ const AboutSection = () => {
           <div className='mt-8'>{TAB_DATA.find((t) => t.id === tab).content}</div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
