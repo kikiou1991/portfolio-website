@@ -35,7 +35,7 @@ const HeroSection = () => {
           </motion.h1>
           <p className='text-[#EEBA35] text-base font-semibold sm:text-lg mb-6 lg:text-xl'>
             I am also a huge Harry Potter fan. That gave me the idea for the theme of this page, and also some of my favourite projects are centered around this as well. Thus mixing two of my
-            passions.
+            passions. I am passoinate and hardworking and I am always looking for new challenges.
           </p>
           <div>
             <button className='px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-white hover:bg-slate-200 text-black'>
