@@ -5,10 +5,27 @@ import { motion } from 'framer-motion';
 // import { fadeIn } from '../animations';
 import Image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
+import { useSectionInView } from '@/lib/custom-hooks/useSectionInView';
 
 const HeroSection = () => {
+  const { ref } = useSectionInView('Home');
+
   return (
-    <section className=''>
+    <motion.section
+      ref={ref}
+      initial={{
+        opacity: 0,
+      }}
+      whileInView={{
+        opacity: 1,
+      }}
+      transition={{
+        duration: 1,
+      }}
+      viewport={{
+        once: true,
+      }}
+      className=''>
       <div className='grid grid-cols-1 sm:grid-cols-12 mt-10 gap-10'>
         <div className='col-span-7 place-self-center text-center sm:text-left'>
           <motion.h1
@@ -55,7 +72,7 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

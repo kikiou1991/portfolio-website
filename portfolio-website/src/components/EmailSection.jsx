@@ -6,6 +6,8 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import { sendEmail } from '@/app/api/send/route';
 import { FaPaperPlane } from 'react-icons/fa';
+import { useSectionInView } from '@/lib/custom-hooks/useSectionInView';
+
 const EmailSection = () => {
   const [formData, setFormData] = useState({
     email: '',
@@ -13,7 +15,7 @@ const EmailSection = () => {
     message: '',
   });
   const [emailSubmitted, setEmailSubmitted] = useState(false);
-
+  const { ref } = useSectionInView('Contact');
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(process.env.RESEND_API_KEY, 'test');
@@ -45,6 +47,7 @@ const EmailSection = () => {
 
   return (
     <motion.section
+      ref={ref}
       initial={{
         opacity: 0,
       }}
@@ -58,7 +61,7 @@ const EmailSection = () => {
         once: true,
       }}
       className='flex items-center text-center justify-center flex-col my-12 md:my-12 py-12 gap-2 md:w-full w-[min(100%,25rem)]'
-      id='contact'>
+      id='Contact'>
       <div className='flex flex-col items-center justify-center'>
         <h2 className='text-xl font-bold text-white my-2'>Let`s connect</h2>
         <p className='text-base text-white font-semibold md:text-lg mb-4 max-w-md'>
