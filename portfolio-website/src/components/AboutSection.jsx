@@ -2,7 +2,7 @@
 import React, { useRef, useState, useTransition } from 'react';
 import Image from 'next/image';
 import TabButton from './TabButton';
-import { motion, useScroll } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useSectionInView } from '@/lib/custom-hooks/useSectionInView';
 import { TAB_DATA } from '@/lib/data';
 
@@ -18,7 +18,22 @@ const AboutSection = () => {
   };
 
   return (
-    <motion.section ref={ref} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.175 }} className='text-white my-5' id='about'>
+    <motion.section
+      ref={ref}
+      initial={{
+        opacity: 0,
+      }}
+      whileInView={{
+        opacity: 1,
+      }}
+      transition={{
+        duration: 1,
+      }}
+      viewport={{
+        once: true,
+      }}
+      className='py-5 text-white my-5'
+      id='about'>
       <div className='md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16 h-full'>
         <div className='relative w-full md:w-auto'>
           <Image src='/images/study.png' layout='responsive' width={185} height={185} alt='study-office' />
