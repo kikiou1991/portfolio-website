@@ -1,46 +1,22 @@
 'use client';
-import React from 'react';
+import React, { use } from 'react';
 import ProjectsCard from './ProjectsCard';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import ProjectTag from './ProjectTag';
-
-// Data array for the different projects
-const projectsData = [
-  {
-    id: 1,
-    title: 'Memory Game',
-    description: 'Harry Potter themed memory game',
-    image: '/images/memory.png',
-    tag: ['All', 'Web'],
-    gitUrl: 'https://github.com/kikiou1991/HP_memoryGame',
-    imgAlt: 'Memory Game',
-    siteUrl: '/',
-  },
-  {
-    id: 2,
-    title: 'Study Timer',
-    description: 'Chrome Extension to track study and rest times',
-    image: '/images/timer.png',
-    tag: ['All', 'Web'],
-    gitUrl: 'https://github.com/kikiou1991/chrome_study_extension',
-    imgAlt: 'Study Timer',
-    siteUrl: '/',
-  },
-
-  {
-    id: 4,
-    title: 'Wizard Boards',
-    description: 'Trello clone with a Harry Potter theme',
-    image: '/images/food.png',
-    tag: ['All', 'Web'],
-    gitUrl: 'https://github.com/kikiou1991/WizardBoards',
-    imgAlt: 'Wizard Boards',
-    siteUrl: 'https://gadorjani.co.uk/wizardboards/auth/sign-in',
-  },
-];
+import { useScroll, motion, useTransform } from 'framer-motion';
+import { projectsData } from '@/lib/data';
+import { useSectionInView } from '@/lib/custom-hooks/useSectionInView';
 
 const ProjectSection = () => {
   const [tag, setTag] = useState('All');
+
+  const { ref } = useSectionInView('Portfolio');
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['0.2 1', '1.22 1'],
+  });
+
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
 
   // Function to handle changing the selected project tag
   const handleTagChange = (newTag) => {
@@ -51,7 +27,13 @@ const ProjectSection = () => {
   const filteredProjects = projectsData.filter((project) => project.tag.includes(tag));
 
   return (
-    <section id='projects'>
+    <motion.section
+      style={{
+        scale: scaleProgress,
+        opacity: scrollYProgress,
+      }}
+      ref={ref}
+      id='Portfolio'>
       <h2 className='text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12'>My Projects</h2>
       <div className='flex flex-row justify-center text-center text-white  gap-2 mb-2 py-6'>
         {/* Project filter buttons */}
@@ -65,7 +47,7 @@ const ProjectSection = () => {
           <ProjectsCard siteUrl={project.siteUrl} key={project.id} title={project.title} description={project.description} imgUrl={project.image} gitUrl={project.gitUrl} imgAlt={project.imgAlt} />
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 };
 

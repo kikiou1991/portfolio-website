@@ -1,48 +1,15 @@
 'use client';
-import React, { useState, useTransition } from 'react';
+import React, { useRef, useState, useTransition } from 'react';
 import Image from 'next/image';
 import TabButton from './TabButton';
-import { motion } from 'framer-motion';
-
-const TAB_DATA = [
-  {
-    title: 'Skills',
-    id: 'skills',
-    content: (
-      <ul className='list-disc md:list-disc ml-5'>
-        <li>JavaScript</li>
-        <li>TypeScript</li>
-        <li>React/Next.js</li>
-        <li>Tailwind.css</li>
-        <li>Node.js</li>
-      </ul>
-    ),
-  },
-  {
-    title: 'Education',
-    id: 'education',
-    content: (
-      <ul className='list-disc md:list-disc ml-5'>
-        <li>Io Academy - Skills Bootcamp in Software Development(ongoing)</li>
-        <li>CodeCademy - Front-End Engineer</li>
-        <li>freeCodeCamp - JavaScript-Algorithms and Data Structures</li>
-      </ul>
-    ),
-  },
-  {
-    title: 'Experience',
-    id: 'experience',
-    content: (
-      <ul className='list-disc md:list-disc ml-5'>
-        <li>Private Projects</li>
-      </ul>
-    ),
-  },
-];
+import { motion, useScroll } from 'framer-motion';
+import { useSectionInView } from '@/lib/custom-hooks/useSectionInView';
+import { TAB_DATA } from '@/lib/data';
 
 const AboutSection = () => {
   const [tab, setTab] = useState('skills');
   const [isPending, startTransition] = useTransition();
+  const { ref } = useSectionInView('About');
 
   const handleTabChange = (id) => {
     startTransition(() => {
@@ -51,24 +18,10 @@ const AboutSection = () => {
   };
 
   return (
-    <motion.section
-      initial={{
-        opacity: 0,
-      }}
-      whileInView={{
-        opacity: 1,
-      }}
-      transition={{
-        duration: 1,
-      }}
-      viewport={{
-        once: true,
-      }}
-      className='text-white my-5'
-      id='about'>
+    <motion.section ref={ref} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.175 }} className='text-white my-5' id='about'>
       <div className='md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16 h-full'>
         <div className='relative w-full md:w-auto'>
-          <Image src='/images/study.png' layout='responsive' width={170} height={170} alt='study-office' />
+          <Image src='/images/study.png' layout='responsive' width={185} height={185} alt='study-office' />
         </div>
         <div className='mt-5 md:mt-0 text-left flex flex-col h-full'>
           <h2 className='text-4xl font-bold text-[#EEBA35] mb-4'>About Me</h2>
