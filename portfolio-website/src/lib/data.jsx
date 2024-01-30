@@ -88,4 +88,3 @@ export const navLinks = [
     path: '#Contact',
   },
 ];
-e;
