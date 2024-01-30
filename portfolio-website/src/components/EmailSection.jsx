@@ -4,10 +4,10 @@ import { LinkedIn } from '@/app/svg/linkedin';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { sendEmail } from '@/app/api/send/route';
 import { FaPaperPlane } from 'react-icons/fa';
 import { useSectionInView } from '@/lib/custom-hooks/useSectionInView';
 import { ToastContainer, toast } from 'react-toastify';
+import { sendEmail } from '@/actions/sendEmail';
 const EmailSection = () => {
   const [formData, setFormData] = useState({
     email: '',
@@ -32,7 +32,7 @@ const EmailSection = () => {
       viewport={{
         once: true,
       }}
-      className='flex items-center text-center justify-center flex-col my-12 md:my-12 py-12 gap-2 md:w-full w-[min(100%,25rem)]'
+      className='flex items-center text-center justify-center flex-col my-12 md:my-12 py-12 gap-2 md:w-full '
       id='Contact'>
       <div className='flex flex-col items-center justify-center'>
         <h2 className='text-xl font-bold text-white my-2'>Let`s connect</h2>
@@ -57,11 +57,7 @@ const EmailSection = () => {
             style={{ minWidth: '500px' }}
             action={async (formData) => {
               await sendEmail(formData);
-              if (error) {
-                toast.error(error);
-                return;
-              }
-
+              setEmailSubmitted(true);
               toast.success('Email sent successfully!');
             }}
             className='flex flex-col gap-2 mt-10 justify-center items-center'>
