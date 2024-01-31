@@ -38,7 +38,8 @@ const EmailSection = () => {
         <h2 className='text-xl font-bold text-white my-2'>Let`s connect</h2>
         <p className='text-base text-white font-semibold md:text-lg mb-4 max-w-md'>
           {' '}
-          I am currently open to freelance work! My inbox is always open for request, weather you have a question or you would like to say hi. I will try my best to get back to you in a timely manner.
+          I am currently open to freelance work! My inbox is always open for requests, weather you have a question or you would like to say hi. I will try my best to get back to you in a timely
+          manner.
         </p>
         <div className='socials flex flex-row gap-2 '>
           <Link href='https://github.com/kikiou1991' target='_blank' className='transfrom transition-transform hover:scale-125'>
