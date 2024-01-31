@@ -16,7 +16,7 @@ export const sendEmail = async (formData) => {
   }
 
   resend.emails.send({
-    from: 'gadorjani.co.uk',
+    from: 'onboarding@resend.dev',
     to: 'gadorjani@windowslive.com',
     subject: subject,
     reply_to: senderEmail,
