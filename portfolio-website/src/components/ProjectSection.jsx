@@ -13,7 +13,7 @@ const ProjectSection = () => {
   const { ref } = useSectionInView('Portfolio');
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['0.2 1', '1.22 1'],
+    offset: ['0 1', '1.1 2'],
   });
 
   const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
@@ -41,6 +41,7 @@ const ProjectSection = () => {
         <ProjectTag onClick={handleTagChange} name='Web' isSelected={tag === 'Web'} />
         <ProjectTag onClick={handleTagChange} name='Mobile' isSelected={tag === 'Mobile'} />
       </div>
+
       <div className='flex flex-row flex-wrap gap-6 justify-center items-center px-2'>
         {filteredProjects.map((project, index) => (
           // Render project cards

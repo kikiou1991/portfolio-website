@@ -1,13 +1,15 @@
 'use client';
 import React from 'react';
-import NavLink from './Navlink';
 import { motion } from 'framer-motion';
-// import { fadeIn } from '../animations';
 import Image from 'next/image';
+import { HiDownload } from 'react-icons/hi';
 import { TypeAnimation } from 'react-type-animation';
 import { useSectionInView } from '@/lib/custom-hooks/useSectionInView';
+import Link from 'next/link';
+import { useActiveSectionContext } from '@/context/active-section-context';
 
 const HeroSection = () => {
+  const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
   const { ref } = useSectionInView('Home');
 
   return (
@@ -26,13 +28,22 @@ const HeroSection = () => {
         once: true,
       }}
       className=''>
-      <div className='grid grid-cols-1 sm:grid-cols-12 mt-10 gap-10'>
+      <div className='grid grid-cols-1 sm:grid-cols-12 mt-10 gap-10 mb-10'>
         <div className='col-span-7 place-self-center text-center sm:text-left'>
           <motion.h1
             // variant={fadeIn('up', 0.5)}
-            initial='hidden'
-            whileInView={'show'}
-            viewport={{ once: false, amount: 0.7 }}
+            initial={{
+              opacity: 0,
+            }}
+            whileInView={{
+              opacity: 1,
+            }}
+            transition={{
+              duration: 1,
+            }}
+            viewport={{
+              once: true,
+            }}
             className='text-white text-4xl sm:text-5xl lg:text-6xl font-extrabold'
             style={{ minHeight: '120px' }}>
             {'Hello there,  '}
@@ -56,12 +67,27 @@ const HeroSection = () => {
           </p>
           <div>
             <button className='px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-white hover:bg-slate-200 text-black'>
-              <a href='#contact'>Hire me</a>
+              <Link
+                onClick={() => {
+                  setActiveSection('Contact');
+                  setTimeOfLastClick(Date.now());
+                }}
+                href='#Contact'>
+                Hire me
+              </Link>
             </button>
 
             <button className='px-6 py-3 w-full sm:w-fit rounded-full mr-4  bg-trasnparent hover:bg-slate-200 text-white border hover:text-black mt-3'>
-              <a href='/CV.pdf' download>
-                Download CV
+              <a href='/CV.pdf' download className='group flex flex-row gap-2 items center justify-center'>
+                Download CV{''}
+                <HiDownload
+                  className='
+                  opacity-70 transition duration-200 ease-in-out
+                  group-hover:translate-y-1
+                  group-hover: -translate-x-1
+                  justify-center items-center
+                '
+                />
               </a>
             </button>
           </div>

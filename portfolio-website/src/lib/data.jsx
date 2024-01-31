@@ -69,3 +69,22 @@ export const TAB_DATA = [
     ),
   },
 ];
+export const navLinks = [
+  {
+    title: 'Home',
+    path: '#Home',
+  },
+
+  {
+    title: 'About',
+    path: '#About',
+  },
+  {
+    title: 'Portfolio',
+    path: '#Portfolio',
+  },
+  {
+    title: 'Contact',
+    path: '#Contact',
+  },
+];
