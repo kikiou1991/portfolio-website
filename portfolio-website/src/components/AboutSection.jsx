@@ -4,7 +4,7 @@ import Image from 'next/image';
 import TabButton from './TabButton';
 import { motion } from 'framer-motion';
 import { useSectionInView } from '@/lib/custom-hooks/useSectionInView';
-import { TAB_DATA } from '@/lib/data';
+import { TAB_DATA } from '@/lib/data/data';
 
 const AboutSection = () => {
   const [tab, setTab] = useState('skills');
