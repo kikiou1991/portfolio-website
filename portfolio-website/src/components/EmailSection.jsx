@@ -55,7 +55,7 @@ const EmailSection = () => {
           <p className='text-green-500 text-sm mt-2'>Email sent successfully!</p>
         ) : (
           <form
-            style={{ minWidth: '500px' }}
+            style={{ minWidth: '450px', maxWidth: '450px' }}
             action={async (formData) => {
               await sendEmail(formData);
               setEmailSubmitted(true);

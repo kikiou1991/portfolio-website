@@ -28,7 +28,7 @@ const HeroSection = () => {
         once: true,
       }}
       className=''>
-      <div className='grid grid-cols-1 sm:grid-cols-12 mt-10 gap-10 mb-10'>
+      <div className='grid grid-cols-1 sm:grid-cols-12 mt-10  mb-10'>
         <div className='col-span-7 place-self-center text-center sm:text-left'>
           <motion.h1
             // variant={fadeIn('up', 0.5)}
@@ -45,7 +45,7 @@ const HeroSection = () => {
               once: true,
             }}
             className='text-white text-4xl sm:text-5xl lg:text-6xl font-extrabold'
-            style={{ minHeight: '120px' }}>
+            style={{ minHeight: '180px' }}>
             {'Hello there,  '}
             <TypeAnimation
               sequence={[
@@ -93,7 +93,7 @@ const HeroSection = () => {
           </div>
         </div>
         <div className='col-span-5 mt-4 py-2 lg:mt-0 place-self-center text-center sm:text-left justify-center'>
-          <div className='rounded-[100%] bg-[#FFD25F] w-[265px] h-[265px] lg:w-[350px] lg:h-[350px] relative items-center'>
+          <div className='rounded-[100%] bg-[#FFD25F] w-[265px] h-[265px] lg:w-[350px] lg:h-[350px] mx-auto relative justify-center items-center'>
             <Image src='/images/wizard.png' alt='Gabor the Wizard' className='absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2' width={300} height={300} />
           </div>
         </div>
