@@ -9,7 +9,7 @@ export const projectsData = [
     tag: ['All', 'Web'],
     gitUrl: 'https://github.com/kikiou1991/HP_memoryGame',
     imgAlt: 'Memory Game',
-    siteUrl: '/',
+    siteUrl: 'https://hp-memory-game-1jn72c0ep-gadorjanis-projects.vercel.app',
   },
   {
     id: 2,
@@ -30,7 +30,7 @@ export const projectsData = [
     tag: ['All', 'Web'],
     gitUrl: 'https://github.com/kikiou1991/WizardBoards',
     imgAlt: 'Wizard Boards',
-    siteUrl: 'https://wizardboardsco.uk/auth/sign-in',
+    siteUrl: '/',
   },
 ];
 
