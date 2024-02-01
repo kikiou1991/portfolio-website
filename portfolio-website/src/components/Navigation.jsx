@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import clsx from 'clsx';
 import { useActiveSectionContext } from '@/context/active-section-context';
-import { navLinks } from '@/lib/data';
+import { navLinks } from '@/lib/data/data';
 
 const Navigation = () => {
   const { activeSection, setActiveSection } = useActiveSectionContext();

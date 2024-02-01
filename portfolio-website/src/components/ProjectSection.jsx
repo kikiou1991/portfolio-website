@@ -4,7 +4,7 @@ import ProjectsCard from './ProjectsCard';
 import { useState, useRef } from 'react';
 import ProjectTag from './ProjectTag';
 import { useScroll, motion, useTransform } from 'framer-motion';
-import { projectsData } from '@/lib/data';
+import { projectsData } from '@/lib/data/data';
 import { useSectionInView } from '@/lib/custom-hooks/useSectionInView';
 
 const ProjectSection = () => {
