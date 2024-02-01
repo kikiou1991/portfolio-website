@@ -11,7 +11,7 @@ export const sendEmail = async (formData) => {
 
   if (!message || !subject) {
     return {
-      error: 'Please fill in all the fields',
+      error: 'Please fill in all of the fields',
     };
   }
 
