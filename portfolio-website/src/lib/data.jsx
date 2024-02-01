@@ -30,7 +30,7 @@ export const projectsData = [
     tag: ['All', 'Web'],
     gitUrl: 'https://github.com/kikiou1991/WizardBoards',
     imgAlt: 'Wizard Boards',
-    siteUrl: 'https://gadorjani.co.uk/wizardboards/auth/sign-in',
+    siteUrl: 'https://wizardboardsco.uk/auth/sign-in',
   },
 ];
 
