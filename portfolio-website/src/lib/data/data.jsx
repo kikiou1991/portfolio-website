@@ -5,7 +5,7 @@ export const projectsData = [
     id: 1,
     title: 'Memory Game',
     description: 'Harry Potter themed memory game',
-    image: '/images/hp-memory-game-sc.png',
+    image: '/images/hp-memo-game.png',
     tag: ['All', 'Web'],
     gitUrl: 'https://github.com/kikiou1991/HP_memoryGame',
     imgAlt: 'Memory Game',

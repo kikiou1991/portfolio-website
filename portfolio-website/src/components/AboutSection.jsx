@@ -22,6 +22,11 @@ const AboutSection = () => {
       ref={ref}
       initial={{
         opacity: 0,
+        translateX: 50,
+      }}
+      animate={{
+        opacity: 1,
+        translateX: 0,
       }}
       whileInView={{
         opacity: 1,
