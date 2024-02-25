@@ -1,19 +1,19 @@
-'use client';
-import React, { use } from 'react';
-import ProjectsCard from './ProjectsCard';
-import { useState, useRef } from 'react';
-import ProjectTag from './ProjectTag';
-import { useScroll, motion, useTransform } from 'framer-motion';
-import { projectsData } from '@/lib/data/data';
-import { useSectionInView } from '@/lib/custom-hooks/useSectionInView';
+"use client";
+import React, { use } from "react";
+import ProjectsCard from "./ProjectsCard";
+import { useState, useRef } from "react";
+import ProjectTag from "./ProjectTag";
+import { useScroll, motion, useTransform } from "framer-motion";
+import { projectsData } from "@/lib/data/data";
+import { useSectionInView } from "@/lib/custom-hooks/useSectionInView";
 
 const ProjectSection = () => {
-  const [tag, setTag] = useState('All');
+  const [tag, setTag] = useState("All");
 
-  const { ref } = useSectionInView('Portfolio');
+  const { ref } = useSectionInView("Portfolio");
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['0 1', '1.1 2'],
+    offset: ["0 1", "1.1 2"],
   });
 
   const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
@@ -24,7 +24,9 @@ const ProjectSection = () => {
   };
 
   // Filter the projects based on the selected tag
-  const filteredProjects = projectsData.filter((project) => project.tag.includes(tag));
+  const filteredProjects = projectsData.filter((project) =>
+    project.tag.includes(tag)
+  );
 
   return (
     <motion.section
@@ -33,19 +35,42 @@ const ProjectSection = () => {
         opacity: scrollYProgress,
       }}
       ref={ref}
-      id='Portfolio'>
-      <h2 className='text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12'>My Projects</h2>
-      <div className='flex flex-row justify-center text-center text-white  gap-2 mb-2 py-6'>
+      id="Portfolio"
+    >
+      <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
+        My Projects
+      </h2>
+      <div className="flex flex-row justify-center text-center text-white  gap-2 mb-2 py-6">
         {/* Project filter buttons */}
-        <ProjectTag onClick={handleTagChange} name='All' isSelected={tag === 'All'} />
-        <ProjectTag onClick={handleTagChange} name='Web' isSelected={tag === 'Web'} />
-        <ProjectTag onClick={handleTagChange} name='Mobile' isSelected={tag === 'Mobile'} />
+        <ProjectTag
+          onClick={handleTagChange}
+          name="All"
+          isSelected={tag === "All"}
+        />
+        <ProjectTag
+          onClick={handleTagChange}
+          name="Front-end"
+          isSelected={tag === "Front-end"}
+        />
+        <ProjectTag
+          onClick={handleTagChange}
+          name="Full-stack"
+          isSelected={tag === "Full-stack"}
+        />
       </div>
 
-      <div className='flex flex-row flex-wrap gap-6 justify-center items-center px-2'>
+      <div className="flex flex-row flex-wrap gap-6 justify-center items-center px-2">
         {filteredProjects.map((project, index) => (
           // Render project cards
-          <ProjectsCard siteUrl={project.siteUrl} key={project.id} title={project.title} description={project.description} imgUrl={project.image} gitUrl={project.gitUrl} imgAlt={project.imgAlt} />
+          <ProjectsCard
+            siteUrl={project.siteUrl}
+            key={project.id}
+            title={project.title}
+            description={project.description}
+            imgUrl={project.image}
+            gitUrl={project.gitUrl}
+            imgAlt={project.imgAlt}
+          />
         ))}
       </div>
     </motion.section>
